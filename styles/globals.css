@@ -53,3 +53,7 @@ h2 {
   @apply: bg-green-400;
   background-color: #68d391;
 }
+
+.section .fp-tableCell {
+  display: flex !important;
+}
