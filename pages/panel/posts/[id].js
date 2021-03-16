@@ -1,10 +1,10 @@
 import React from "react";
-// import dynamic from "next/dynamic";
-import Details from "../../../components/layout/Details";
+import dynamic from "next/dynamic";
+import Details from "../../../components/Details";
 
-// const Editor = dynamic(() => import("../../../components/Editor"), {
-//   ssr: false,
-// });
+const Editor = dynamic(() => import("../../../components/Editor"), {
+  ssr: false,
+});
 
 const ArticlesDetail = () => (
   <div className="p-5">
