@@ -15,45 +15,49 @@ export const Post = ({ status, article }) => {
   }, [status]);
 
   return (
-    <Link href={`/panel/posts/${article.id}`} as={`/panel/posts/${article.id}`}>
-      <div className="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg bg-white cursor-pointer">
-        {/* */}
-        <div className="flex justify-between">
-          <div className="flex flex-col space-y-2 w-1/2">
-            <div className="text-gray-400">Category</div>
-            <div className="text-lg font-semibold ellipse-text">
-              {article.name}
-            </div>
-            <div className="text-sm text-justify pr-5 ellipse-text">
-              {article.address.city}
-            </div>
-          </div>
-          <div className="w-1/2 flex items-center">
+    <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+      <article className="overflow-hidden rounded shadow-lg">
+        <Link
+          href={`/panel/posts/${article.id}`}
+          as={`/panel/posts/${article.id}`}
+        >
+          <a>
             <img
-              src="/image/samp.jpg"
-              className="shadow-lg rounded-md"
-              alt="post"
+              alt="Placeholder"
+              className="object-cover h-48  w-full"
+              src="https://picsum.photos/600/400/?random"
             />
-          </div>
-        </div>
-        {/* */}
-        <div className="mt-5 flex justify-between">
-          <div>
-            <span
-              className={`inline-block relative px-2 text-sm font-semibold ${statusClass} rounded`}
-            >
-              {status}
-            </span>
-            <small className="ml-3 text-gray-400">from 2021</small>
-          </div>
-          <a
-            href="#"
-            className="font-semibold text-sm text-blue-600 hover:text-blue-800"
-          >
-            Edit
           </a>
-        </div>
-      </div>
-    </Link>
+        </Link>
+
+        <header className="flex items-center justify-between leading-tight px-2 md:px-4 pt-5 md:pt-5">
+          <a className="text-lg font-semibold text-black" href="#">
+            {article.name}
+          </a>
+          <p
+            className={`inline-block relative px-2 text-sm font-semibold ${statusClass} rounded`}
+          >
+            {status}
+          </p>
+        </header>
+        <main className="p-2 md:p-4">
+          <div className="text-gray-600 text-sm">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error
+            nulla atque nihil cupiditate.
+          </div>
+        </main>
+        <footer className="flex items-center justify-between p-2 md:p-4">
+          <div></div>
+          <Link
+            href={`/panel/posts/${article.id}`}
+            as={`/panel/posts/${article.id}`}
+          >
+            <a className="font-semibold text-sm text-blue-600 hover:text-blue-800">
+              Edit
+            </a>
+          </Link>
+        </footer>
+      </article>
+    </div>
   );
 };

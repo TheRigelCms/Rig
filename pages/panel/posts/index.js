@@ -23,8 +23,8 @@ const Index = ({ articles }) => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 mt-7 md:grid-cols-2 lg:grid-cols-3">
-        {articlesList}
+      <div className="container my-12 mx-auto px-4 md:px-0">
+        <div className="flex flex-wrap -mx-1 lg:-mx-4">{articlesList}</div>
       </div>
     </div>
   );
